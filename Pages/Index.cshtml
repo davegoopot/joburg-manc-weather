@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Manc-Joburg Weather Fight-Off";
+    WeatherData weather = (WeatherData)ViewData["weather"];
+}
+
+<h1>
+@if (weather.JoburgTempC == weather.MancTempC)
+{
+        <text>The temperature is the same in both Manchester and Johannesburg.</text>
+} 
+else
+{
+    <text>@(weather.MancTempC > weather.JoburgTempC ? "Manchester" : "Johannesburg") is the warmest.</text>
+}
+</h1>
+<p>Manchester = @weather.MancTempC</p>
+<p>Joburg = @weather.JoburgTempC</p>
+
